@@ -1,0 +1,53 @@
+//Creating a interesection Observer to check when the element (about me) is in the viewport.
+const AboutMeObserver = new IntersectionObserver(tracker);
+let string = "an Artist";
+function tracker(array){
+    array.forEach(function(element){
+        if(element.isIntersecting){
+        console.log("section is in view");
+        // aboutMeSection.style.animationName = "about-me-opacity-change";
+        // aboutMeSection.style.animationDuration = '500ms';
+        // aboutMeSection.style.animationFillMode =  'forwards';
+        // aboutMeSection.style.animationDelay = '.5s';
+        aboutMeSection.classList.remove("about-me-section");  // Remove mystyle class
+        aboutMeSection.classList.add("about-me-section-visible");  // Add newone class
+        for(let i = 0; i < 1; i++){
+            setTimeout(TypeWrite, 1000, changingAboutMeText, string, 0);
+            // setTimeout(backWardsType, 2000, changingAboutMeText, string, 5);
+            setTimeout(backWardsType, 2000, string, changingAboutMeText);
+        }
+    }
+
+
+        else if(element.isIntersecting == false){
+        console.log("section is outside the view"); 
+        aboutMeSection.classList.remove("about-me-section-visible");  // Remove mystyle class
+        aboutMeSection.classList.add("about-me-section-invisible");  // Add newone class
+        changingAboutMeText.textContent = '';
+        }
+    });
+}
+
+function aboutMeInitialOpacityChange(){
+    setTimeout(function(){AboutMeObserver.observe(aboutMeSection);}, 5000);
+}
+
+aboutMeInitialOpacityChange();
+
+// function TypeWrite(sentence, word, index)
+
+
+function backWardsType(word, text) {
+    let result = "";
+    for (let i = 0; i < word.length; i++) {
+        result += word[i];
+    }
+    text.textContent = result;
+    
+    if (word.length == 0) {
+        console.log("ho");
+        return;
+    }
+    
+    setTimeout(backWardsType, 100, word.substring(0, word.length - 1), text);
+}

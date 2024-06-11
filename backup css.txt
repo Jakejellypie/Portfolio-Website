@@ -1,0 +1,276 @@
+html{
+    background-color: black;
+}
+
+body{
+    margin: 0;
+}
+
+nav{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  box-shadow: #134592 -2px 2px;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  height: 3rem;
+  box-shadow: #dedede66 0 0 0;
+  animation-name: line-expansion;
+  animation-duration: 500ms;
+  animation-delay: 1850ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  top: 0;
+  z-index: 10;
+  text-shadow: #ffffff70 -1px 1px;
+  color: #e22f2f;
+  visibility:hidden;
+}
+
+@keyframes line-expansion{
+    0%{border-bottom: 0;}
+    100%{border-bottom: #251717 solid}
+}
+
+.welcome-message{
+    margin: auto;
+    width: fit-content;
+    font-size: 4rem;
+    animation-name: slow-popup;
+    animation-delay: .5s;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    opacity: 0%;
+    color:red;
+}
+
+@keyframes slow-popup {
+    0%   {opacity:0%}
+    100% {opacity:100%}
+}
+
+h1{
+    padding: 2rem;
+    display: inline-block;
+    margin: 5rem 0 0 0;
+    animation-name: slide-down;
+    animation-delay: .1s;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    text-shadow: #ffffff61 1px 2px;
+}
+
+@keyframes slide-down {
+    0%   {margin: 5rem 0 0 0;}
+    100% {margin: 8rem 0 0 0;}
+}
+
+#first-nav-element, #second-nav-element, #third-nav-element, #fourth-nav-element {
+    font-size: 0rem;
+    text-align: center;
+    margin: auto 0;
+    animation-name: rapid-expansion;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#first-nav-element{
+    animation-delay: 2150ms;
+}
+
+#second-nav-element{
+    animation-delay: 2220ms;
+}
+
+#third-nav-element{
+    animation-delay: 2290ms;
+}
+
+#fourth-nav-element{
+    animation-delay: 2400ms;
+}
+
+@keyframes rapid-expansion {
+    0%      {font-size: 0rem;}
+    80%     {font-size: 1.5rem;}
+    100%    {font-size: 1.3rem;}
+}
+
+p:hover{
+    cursor: pointer;
+    box-shadow: black 1px 1px 2px;
+    padding:.5rem 1rem;
+    border-radius:1rem;
+    color:rgb(214, 204, 204);
+    background-color: #0f2d5b;
+
+}
+
+content{
+    animation-name: test;
+    animation-duration: 3s;
+    animation-delay:2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes test {
+    0%{opacity: 0%;}
+    100%{opacity: 100%;}    
+}
+
+
+idea 2
+
+html{
+    background-color: black;
+}
+
+body{
+    margin: 0;
+}
+
+nav{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  box-shadow: #134592 -2px 2px;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  height: 3rem;
+  box-shadow: #dedede66 0 0 0;
+  top: 0;
+  z-index: 10;
+  text-shadow: #ffffff70 -1px 1px;
+  color: #e22f2f;
+  visibility:hidden;
+}
+
+.welcome-message{
+    margin: auto;
+    width: fit-content;
+    font-size: 4rem;
+    animation-name: slide-down;
+    animation-delay: .5s;
+    animation-duration: 1500ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0%;
+    color:red;
+}
+
+h1{
+    padding: 2rem;
+    display: inline-block;
+    margin: 5rem 0 0 0;
+    animation-name: slide-down;
+    text-shadow: #ffffff61 1px 2px;
+}
+
+@keyframes slide-down {
+    0%   {opacity:0; margin: 5rem auto;}
+    100% {opacity:1; margin: 7rem auto auto auto;}
+}
+
+//BACKUP jAVASCRIPT
+
+// setTimeout(opacityChanger, 6500, p, "grey");
+// setTimeout(opacityChanger, 6800, p, "black");
+// setTimeout(opacityChanger, 7000, p, "grey");
+// setTimeout(opacityChanger, 7200, p, "normal");
+// setTimeout(opacityChanger, 7300, p, "grey");
+// setTimeout(opacityChanger, 7350, p, "black");
+// setTimeout(opacityChanger, 7400, p, "grey");
+// setTimeout(opacityChanger, 7450, p, "normal");
+
+
+//creating a function that will dynamically change 1 or more opacities of the "portfolio" word.
+function DynamicOpacityChanger(){
+    //generates a random number between 1 and 9.
+    let randomNumber = Math.floor(Math.random() * 8) + 1;
+    if(randomNumber == 1){
+        opacityTimingCalc(8000, o1);
+    }
+    else if(randomNumber == 2){
+        opacityTimingCalc(10000, r);
+    }
+    else if(randomNumber == 3){
+        opacityTimingCalc(7500, t);
+    }
+    else if(randomNumber == 4){
+        opacityTimingCalc(9000, f);
+    }
+    else if(randomNumber == 5){
+        opacityTimingCalc(9200, o2);
+    }
+    else if(randomNumber == 6){
+        opacityTimingCalc(9500, l);
+    }
+    else if(randomNumber == 7){
+        opacityTimingCalc(7600, i);
+    }
+    else if(randomNumber == 8){
+        opacityTimingCalc(8400, o3);
+    }
+}
+
+
+/*** This is the project section that I will work on later.
+.projects-section{
+    margin: 30rem auto auto auto;
+    background-color: #333;
+    width: 60rem;
+    border-radius: 40px;
+    height: fit-content;
+    padding: 3rem 0;  
+}
+
+.filter-grid{
+    text-align:center;
+}
+
+.searchBar{
+    width: 38rem;
+    border-radius: 20px;
+    text-align: center;
+    font-family: custom, Dancing Script;
+    font-size: 21px;
+    padding: 4.5px;
+    font-style: italic;
+}
+
+.filter-buttons{
+    width: 45rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    border-radius: 17px;
+}
+
+button{
+    height: 2rem;
+    width: 6rem;
+    margin: 6px 10px;
+    border-radius: 11px;
+    padding: 2px;
+    font-family: Amatic SC, times New Roman;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+}
+
+.projects-grid-container{
+    width: 43rem;
+    height: 24rem;
+    margin: 1rem auto auto auto;
+    background-color: rgba(5, 5, 5, 0.447);
+    border-style: ridge;
+    border-radius: 3px;
+}
+**/
